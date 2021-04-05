@@ -1,12 +1,9 @@
 const button = document.querySelector('button');
-//const circle = document.querySelector('.circle');
+const circle = document.querySelector('.circle');
 
 button.addEventListener('click', (e) => {
-  //console.log(e.layerX, e.layerY);
-  const circle = document.createElement('span');
-  circle.classList.add('circle');
+  circle.classList.remove('show');
+  circle.classList.remove('hide');
   circle.setAttribute(`style`, `top:${e.layerY}px ; left:${e.layerX}px`);
-  button.appendChild(circle);
-
-  setTimeout(() => circle.remove(), 400);
+  circle.classList.toggle('show');
 });
